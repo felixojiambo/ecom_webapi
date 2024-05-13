@@ -79,7 +79,7 @@ namespace ecom.Controllers
                         }
 
 
-                        var signKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:SecritKey"])); //"ssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+                        var signKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JWT:SecretKey"])); 
 
                         SigningCredentials signingCredentials =
                             new SigningCredentials(signKey, SecurityAlgorithms.HmacSha256);

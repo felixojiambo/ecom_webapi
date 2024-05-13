@@ -70,7 +70,7 @@ var builder = WebApplication.CreateBuilder(args);
                 swagger.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "E-Commerce",
+                    Title = "e-com",
                     Description = "OJIAMBO FELIX PROJECT DEMO"
                 });
                 // To Enable authorization using Swagger (JWT)    
