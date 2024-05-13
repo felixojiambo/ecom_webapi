@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.DTO
+﻿namespace ecom.Dtos
 {
     public class CategoryWithProduct
     {

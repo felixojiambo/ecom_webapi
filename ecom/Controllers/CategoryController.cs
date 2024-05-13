@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebApplication1.DTO;
-using WebApplication1.Models;
-using WebApplication1.Repository;
+using ecom.Models;
+using ecom.Dtos;
+using ecom.Repository;
 
-namespace WebApplication1.Controllers
+namespace ecom.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

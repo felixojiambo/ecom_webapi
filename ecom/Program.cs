@@ -1,3 +1,12 @@
+using ecom.Models;
+using ecom.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
+using System.Text;
+
 var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
@@ -9,7 +18,7 @@ var builder = WebApplication.CreateBuilder(args);
 
             builder.Services.AddDbContext<Context>(options =>
             {
-                options.UseSqlServer(builder.Configuration.GetConnectionString("cs"));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
             });
 
             builder.Services.AddScoped<IProductRepository, ProductRepository>();
@@ -40,6 +49,7 @@ var builder = WebApplication.CreateBuilder(args);
             {
                 options.SaveToken = true;
                 options.RequireHttpsMetadata = false;
+#pragma warning disable CS8604 // Possible null reference argument.
                 options.TokenValidationParameters = new TokenValidationParameters()
                 {
                     ValidateIssuer = true,
@@ -48,8 +58,9 @@ var builder = WebApplication.CreateBuilder(args);
                     ValidAudience = builder.Configuration["JWT:ValidAud"],
                     IssuerSigningKey =
                     new SymmetricSecurityKey(
-                        Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecritKey"]))
+                        Encoding.UTF8.GetBytes(builder.Configuration["JWT:SecretKey"]))
                 };
+#pragma warning restore CS8604 // Possible null reference argument.
             });
 
             // ------------------------------------------------------------
@@ -60,7 +71,7 @@ var builder = WebApplication.CreateBuilder(args);
                 {
                     Version = "v1",
                     Title = "E-Commerce",
-                    Description = " ITI Projrcy"
+                    Description = "OJIAMBO FELIX PROJECT DEMO"
                 });
                 // To Enable authorization using Swagger (JWT)    
                 swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()

@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-
-namespace WebApplication1.Models
+namespace ecom.Models
 {
     public class Context : IdentityDbContext<ApplicationUser>
     {

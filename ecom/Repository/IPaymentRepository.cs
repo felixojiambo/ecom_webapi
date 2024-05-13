@@ -1,6 +1,6 @@
-﻿using WebApplication1.Models;
+﻿using ecom.Models;
 
-namespace WebApplication1.Repository
+namespace ecom.Repository
 {
     public interface IPaymentRepository
     {

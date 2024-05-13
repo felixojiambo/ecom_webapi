@@ -4,10 +4,10 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using WebApplication1.DTO;
-using WebApplication1.Models;
+using ecom.Dtos;
+using ecom.Models;
 
-namespace WebApplication1.Controllers
+namespace ecom.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -1,4 +1,4 @@
-﻿namespace WebApplication1.Models
+﻿namespace ecom.Models
 {
     public class Category
     {
